@@ -1,0 +1,3519 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#"
+     xml:base="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl">
+        <rdfs:label>Fertilizer Ontology</rdfs:label>
+        <rdfs:comment>An ontology describing the fertilizer domain by giving basic information about the different types of fertilizers and its usage.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#belongsToZone -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#belongsToZone">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Zone"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#consistsOfState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#canBeMixedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#canBeMixedWith">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:comment>Gives the chemical fertilizers which can be mixed with other chemical fertilizers and used as physical fertilizers.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#comesUnderZone -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#comesUnderZone"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#consistsOfRegions -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#consistsOfRegions">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#comesUnderZone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#consistsOfState -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#consistsOfState"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#containsPInTheFormOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#containsPInTheFormOf">
+        <rdfs:comment>Descibes the form in which phosphate is present in different phosphatic fertilizers</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateForm"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState">
+        <rdfs:comment>Gives the state for which a yearly or stately information on different nutreints is presented.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forTheNutrient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forTheNutrient">
+        <rdfs:comment>Gives the nutrient for which a yearly or stately information is presented.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Nutrient"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationMethod">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationMethod"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Fertilizer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationTime">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasCultivationMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasCultivationMethod">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasDesirableManure -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasDesirableManure">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManure"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasFertilizerUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasFertilizerUnit">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasNutrientContentUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasNutrientContentUnit">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Unit"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasResidualEffectOnTheSoil -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasResidualEffectOnTheSoil">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ResidualEffectOnTheSoil"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasSeason -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasSeason">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Season"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasSolubility -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasSolubility">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Solubility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasSuitableFertilizer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasSuitableFertilizer">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilNature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasUnit">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Unit"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#isDesirableManureForCultivationMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#isDesirableManureForCultivationMethod">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasDesirableManure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#isSuitableForSoilNature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#isSuitableForSoilNature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilNature"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasSuitableFertilizer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#isTheApplicationTimeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#isTheApplicationTimeOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#isUsedForFertilizer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#isUsedForFertilizer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationMethod"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationMethod"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#usedOnSoilType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#usedOnSoilType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilNature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaKConsumption -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaKConsumption">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaKDespatches -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaKDespatches">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaKImport -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaKImport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaKProduction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaKProduction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaNConsumption -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaNConsumption">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaNDespatches -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaNDespatches">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaNImport -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaNImport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaNProduction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaNProduction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaPConsumption -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaPConsumption">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaPDespatches -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaPDespatches">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaPImport -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaPImport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaPProduction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasAllIndiaPProduction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasCapacity">
+        <rdfs:comment>Gives the all India capacity of fertilizer industry for a specific nutrient in a specific year.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasCapacityUtilisation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasCapacityUtilisation">
+        <rdfs:comment>Gives the capacity utilisation of the fertilizer industry in india for a specific nutrient in a specific year. This is calculated from the capacity and the production values.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasChemicalFormula -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasChemicalFormula">
+        <rdfs:comment>Gives the chemical formula for each fertilizer product.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasConsumption -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasConsumption">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasImport -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasImport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasMaxPercentP -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasMaxPercentP">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentP"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentP"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasMinPercentP -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasMinPercentP">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentP"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentP"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentB -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentB">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BoronFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentCa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentCa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentCu -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentCu">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentIron -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentIron">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentK -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentK">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentMn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentMn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentMo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentMo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MolybdenumFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentN -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentN">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="&xsd;integer">100</xsd:maxInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:minExclusive rdf:datatype="&xsd;integer">0</xsd:minExclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentP -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentP">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentZn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasPercentZn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincFertilizer"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasProduction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasProduction">
+        <rdfs:comment>Gives the all India production of fertilizer industry for a specific nutrient in a specific year.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasRecommendedKDose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasRecommendedKDose">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasRecommendedNDose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasRecommendedNDose">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasRecommendedPDose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasRecommendedPDose">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalDispatchesOfComplexFertilizers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalDispatchesOfComplexFertilizers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalDispatchesOfStraightNitrogenousFertilizers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalDispatchesOfStraightNitrogenousFertilizers">
+        <rdfs:comment>The total dispatches in both the seasons for common straight nitrogenous fertilizers namely urea, ammoniumsulphate and ammonium chloride</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalDispatchesOfStraightPhosphaticFertilizers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalDispatchesOfStraightPhosphaticFertilizers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalKConsumption -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalKConsumption">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalNConsumption -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalNConsumption">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalNProduction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalNProduction">
+        <rdfs:comment>Gives the total N production of each state for a particular year in &apos;000 tonnes.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalPConsumption -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalPConsumption">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalPProduction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasTotalPProduction">
+        <rdfs:comment>Gives the total P2O5 production of each state for a particular year in &apos;000 tonnes.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmideFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmideFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasSolubility"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ReadilySolubleInWater"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationMethod"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FoliarApplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmonicalFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmonicalFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationTime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationTime"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AssociativeSymbiotic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AssociativeSymbiotic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NContributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Biofertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Biofertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Fertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BiofertilizerApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BiofertilizerApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BoronFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BoronFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MicronutrientFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Broadcast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Broadcast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SolidFormApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BulkyOrganicManure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BulkyOrganicManure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SecondaryNutrientFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Fertilizer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasNutrientContentUnit"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Percentage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ComplexFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ComplexFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+        <rdfs:comment>Fertilizer which contains two or more nutrients in chemical combination</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Compost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Compost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BulkyOrganicManure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ConcentratedOrganicManure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ConcentratedOrganicManure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationMethod"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BroadcastingAtPlanting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MicronutrientFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EdibleOilcake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EdibleOilcake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Oilcakes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FarmyardManure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FarmyardManure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BulkyOrganicManure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Fertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Fertilizer"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FertilizersContainingAmmoniumAndNitrateIon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FertilizersContainingAmmoniumAndNitrateIon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FreeLiving -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FreeLiving">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NContributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#GreenManure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#GreenManure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BulkyOrganicManure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MicronutrientFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LiquidFormApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LiquidFormApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LocalizedPlacement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LocalizedPlacement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SolidFormApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MagnesiumFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MagnesiumFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SecondaryNutrientFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MicronutrientFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MicronutrientFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MicronutrientFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MixedFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MixedFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+        <rdfs:comment>Fertilizer which contains two or more nutrients as a physical mixture</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MolybdenumFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MolybdenumFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MicronutrientFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NContributor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NContributor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Biofertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrateFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrateFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasResidualEffectOnTheSoil"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Basic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationMethod"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SideDressing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasSolubility"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#HighlySolubleInSoilSolution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasApplicationMethod"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Topdressing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenSolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenSolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StraightFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NonEdibleOilcake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NonEdibleOilcake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Oilcakes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Nutrient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Nutrient"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Oilcakes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Oilcakes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ConcentratedOrganicManure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Fertilizer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasNutrientContentUnit"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Percentage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManureOfAnimalOrigin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManureOfAnimalOrigin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ConcentratedOrganicManure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PContributor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PContributor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Biofertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateAbsorber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateAbsorber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PContributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateForm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateForm"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateSolubilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateSolubilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PContributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StraightFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingCitricAcidSolublePhosphoricAcidOrDicalciumPhosphate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingCitricAcidSolublePhosphoricAcidOrDicalciumPhosphate">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#containsPInTheFormOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CitricAcidSolublePhosphoricAcidForm"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#containsPInTheFormOf"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DicalciumPhosphateForm"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingInsolublePhosphoricAcidOrTricalciumPhosphate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingInsolublePhosphoricAcidOrTricalciumPhosphate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingWaterSolublePhosphoricAcidOrMonocalciumPhosphate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingWaterSolublePhosphoricAcidOrMonocalciumPhosphate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Placement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Placement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SolidFormApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StraightFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ResidualEffectOnTheSoil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ResidualEffectOnTheSoil"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RowPlacement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RowPlacement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SolidFormApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForAndhraPradesh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForAndhraPradesh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AndhraPradesh"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForAssam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForAssam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Assam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForBihar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForBihar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Bihar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForChhattisgarh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForChhattisgarh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Chhattisgarh"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForGoa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForGoa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Goa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForGujarat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForGujarat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Gujarat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForHaryana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForHaryana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Haryana"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForJharkhand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForJharkhand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Jharkhand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForKarnataka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForKarnataka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Karnataka"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForKerala -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForKerala">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Kerala"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForMP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForMP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MadhyaPradesh"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForMaharashtra -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForMaharashtra">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Maharashtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForOrissa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForOrissa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Orissa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForPunjab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForPunjab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Punjab"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForRajasthan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForRajasthan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rajasthan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForTamilNadu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForTamilNadu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TamilNadu"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForUP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForUP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UttarPradesh"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForWestBengal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForWestBengal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WestBengal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Season -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Season"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SecondaryNutrientFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SecondaryNutrientFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SlowlyAvailableNitrogenousFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SlowlyAvailableNitrogenousFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenousFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilNature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilNature">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Alkaline"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Acidic"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Neutral"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SolidFormApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SolidFormApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Solubility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Solubility"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StateWiseInformation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasUnit"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#&apos;000Tonnes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forState"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StraightFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StraightFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ChemicalFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SulphurFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SulphurFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SecondaryNutrientFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SymbioticAssociation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SymbioticAssociation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NContributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Unit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Unit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2007-2008"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2008-2009"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2009-2010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2010-2011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2011-2012"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformationOfFertilizerIndustry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasYear"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#hasUnit"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#&apos;000Tonnes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forTheNutrient"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Nutrient"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincFertilizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincFertilizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MicronutrientFertilizer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZonalInformation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZonalInformation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YearWiseInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Zone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Zone">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#East"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#West"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#North"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#South"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#&apos;000Tonnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#&apos;000Tonnes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2007-2008 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2007-2008">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2008-2009 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2008-2009">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2009-2010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2009-2010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2010-2011 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2010-2011">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2011-2012 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2011-2012">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Year"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+        <hasAllIndiaNProduction rdf:datatype="&xsd;decimal">12288.1</hasAllIndiaNProduction>
+        <hasAllIndiaNConsumption rdf:datatype="&xsd;decimal">17300.3</hasAllIndiaNConsumption>
+        <hasAllIndiaNDespatches rdf:datatype="&xsd;decimal">17832.4</hasAllIndiaNDespatches>
+        <hasAllIndiaKImport rdf:datatype="&xsd;decimal">2557.8</hasAllIndiaKImport>
+        <hasTotalKConsumption rdf:datatype="&xsd;decimal">2575.5</hasTotalKConsumption>
+        <hasAllIndiaKDespatches rdf:datatype="&xsd;decimal">2683.0</hasAllIndiaKDespatches>
+        <hasAllIndiaPImport rdf:datatype="&xsd;decimal">4263.6</hasAllIndiaPImport>
+        <hasAllIndiaPProduction rdf:datatype="&xsd;decimal">4363.7</hasAllIndiaPProduction>
+        <hasAllIndiaNImport rdf:datatype="&xsd;decimal">5577.6</hasAllIndiaNImport>
+        <hasAllIndiaPConsumption rdf:datatype="&xsd;decimal">7914.3</hasAllIndiaPConsumption>
+        <hasAllIndiaPDespatches rdf:datatype="&xsd;decimal">8739.7</hasAllIndiaPDespatches>
+        <hasYear rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2011-2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AID5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AllIndiaData"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Acidic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Acidic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ResidualEffectOnTheSoil"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilNature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ActivatedSludge -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ActivatedSludge">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManureOfAnimalOrigin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Alkaline -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Alkaline">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilNature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumChloride -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumChloride">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmonicalFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumMolybdate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumMolybdate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MolybdenumFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumNitrate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumNitrate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FertilizersContainingAmmoniumAndNitrateIon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmonicalFertilizer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingWaterSolublePhosphoricAcidOrMonocalciumPhosphate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumPolysulphide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumPolysulphide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SulphurFertilizer"/>
+        <hasChemicalFormula rdf:datatype="&xsd;string">(NH4)2Sx</hasChemicalFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumSulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumSulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmonicalFertilizer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SulphurFertilizer"/>
+        <hasChemicalFormula rdf:datatype="&xsd;string">(NH4)2SO4</hasChemicalFormula>
+        <canBeMixedWith rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassiumSulphate"/>
+        <canBeMixedWith rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SingleSuperPhosphate"/>
+        <canBeMixedWith rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TripleSuperPhosphate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumSulphateNitrate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumSulphateNitrate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FertilizersContainingAmmoniumAndNitrateIon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumThiosulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumThiosulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SulphurFertilizer"/>
+        <hasChemicalFormula rdf:datatype="&xsd;string">(NH4)2S2O35H2O</hasChemicalFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AndhraPradesh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AndhraPradesh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#South"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AnhydrousAmmonia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AnhydrousAmmonia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenSolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AqueousAmmonia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AqueousAmmonia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrogenSolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Aspergillus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Aspergillus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateSolubilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Assam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Assam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#East"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AtTheTimeOfSowing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AtTheTimeOfSowing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationTime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Azospirillum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Azospirillum">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AssociativeSymbiotic"/>
+        <hasApplicationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SeedTreatment"/>
+        <hasApplicationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SeedlingRootDip"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Azotobacter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Azotobacter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FreeLiving"/>
+        <hasApplicationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SeedTreatment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BandPlacement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BandPlacement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LocalizedPlacement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Basic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Basic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ResidualEffectOnTheSoil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BasicSlag -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BasicSlag">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingCitricAcidSolublePhosphoricAcidOrDicalciumPhosphate"/>
+        <hasPercentCa rdf:datatype="&xsd;double">29.0</hasPercentCa>
+        <hasApplicationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BroadcastingAtPlanting"/>
+        <canBeMixedWith rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassiumSulphate"/>
+        <canBeMixedWith rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RockPhosphate"/>
+        <hasApplicationTime rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WellBeforeSowingTheCrop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BasicZincSulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BasicZincSulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Bihar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Bihar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#East"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BirdGuano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BirdGuano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManureOfAnimalOrigin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BitternPotash -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BitternPotash">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer"/>
+        <hasPercentP rdf:datatype="&xsd;integer">7</hasPercentP>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BoneMeal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BoneMeal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingCitricAcidSolublePhosphoricAcidOrDicalciumPhosphate"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingInsolublePhosphoricAcidOrTricalciumPhosphate"/>
+        <hasApplicationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BroadcastingAtPlanting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Borax -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Borax">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BoronFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BroadcastingAtPlanting -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BroadcastingAtPlanting">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Broadcast"/>
+        <isUsedForFertilizer rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumSulphate"/>
+        <isUsedForFertilizer rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumSulphateNitrate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BurnedLime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BurnedLime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer"/>
+        <hasPercentCa rdf:datatype="&xsd;double">60.0</hasPercentCa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciticLimestone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciticLimestone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer"/>
+        <hasPercentCa rdf:datatype="&xsd;double">32.0</hasPercentCa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumAmmoniumNitrate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumAmmoniumNitrate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FertilizersContainingAmmoniumAndNitrateIon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumCyanamide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumCyanamide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmideFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumNitrate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumNitrate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrateFertilizer"/>
+        <hasChemicalFormula rdf:datatype="&xsd;string">Ca(NO3)2</hasChemicalFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CastorCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CastorCake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NonEdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Chhattisgarh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Chhattisgarh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#West"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CitricAcidSolublePhosphoricAcidForm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CitricAcidSolublePhosphoricAcidForm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperAmmoniumPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperAmmoniumPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperChelate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperChelate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperSulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperSulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CopperFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Cotton -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Cotton">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DecorticatedCottonSeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DecorticatedCottonSeed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DeepPlacement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DeepPlacement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Placement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DiammoniumPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DiammoniumPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ComplexFertilizer"/>
+        <hasChemicalFormula rdf:datatype="&xsd;string">(NH4)2HPO4</hasChemicalFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DicalciumPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DicalciumPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingCitricAcidSolublePhosphoricAcidOrDicalciumPhosphate"/>
+        <hasApplicationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BroadcastingAtPlanting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DicalciumPhosphateForm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DicalciumPhosphateForm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DirectApplicationOfLiquidFertilizerThroughIrrigationWater -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DirectApplicationOfLiquidFertilizerThroughIrrigationWater">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LiquidFormApplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DirectApplicationOfLiquidFertilizerToTheSoil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DirectApplicationOfLiquidFertilizerToTheSoil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LiquidFormApplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DolomiticLimestone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DolomiticLimestone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MagnesiumFertilizer"/>
+        <hasPercentCa rdf:datatype="&xsd;double">22.0</hasPercentCa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DriedBlood -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DriedBlood">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManureOfAnimalOrigin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DrillPlacement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DrillPlacement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LocalizedPlacement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DryOrSemiDryUplandCultivation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DryOrSemiDryUplandCultivation">
+        <hasApplicationTime rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WellBeforeSowingTheCrop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#East -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#East">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Zone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EasternUP_Bihar_Jharkhand_WestBengal_Assam_Odisha_OtherNEStates -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EasternUP_Bihar_Jharkhand_WestBengal_Assam_Odisha_OtherNEStates"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FWIFI5ForN -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FWIFI5ForN"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FertilizerBorate46 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FertilizerBorate46">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BoronFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FishManure -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FishManure">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManureOfAnimalOrigin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FoliarApplication -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#FoliarApplication">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LiquidFormApplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Goa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Goa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#West"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Groundnut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Groundnut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#GroundnutCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#GroundnutCake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Gujarat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Gujarat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#West"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Gypsum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Gypsum">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer"/>
+        <hasPercentCa rdf:datatype="&xsd;double">22.0</hasPercentCa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Haryana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Haryana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#North"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#HighlySolubleInSoilSolution -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#HighlySolubleInSoilSolution">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Solubility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#HillyAreasOfJ&amp;KExceptJammuAndKathuaAndSambaDistricts_HimachalPradeshExceptUna&amp;PaontaValley_Uttarakhand_Sikkim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#HillyAreasOfJ&amp;KExceptJammuAndKathuaAndSambaDistricts_HimachalPradeshExceptUna&amp;PaontaValley_Uttarakhand_Sikkim"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#HydratedLime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#HydratedLime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer"/>
+        <hasPercentCa rdf:datatype="&xsd;double">46.0</hasPercentCa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#InStandingCrop -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#InStandingCrop">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationTime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#InsolublePhosphoricAcidForm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#InsolublePhosphoricAcidForm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronAmmoniumPolyphosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronAmmoniumPolyphosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronOxide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronOxide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronSulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronSulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IronFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IrrigatedLateSown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IrrigatedLateSown"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IrrigatedTimelySown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IrrigatedTimelySown"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Jharkhand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Jharkhand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#East"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#K2O -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#K2O">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Nutrient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#KaranjCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#KaranjCake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NonEdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Karnataka -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Karnataka">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#South"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Kerala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Kerala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#South"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Kg/Ha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Kg/Ha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Kharif -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Kharif">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Season"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LinseedCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LinseedCake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MP_Gujarat_Chattisgarh_Kota&amp;UdaipurDivOfRajasthan&amp;JhansiDivOfUP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MP_Gujarat_Chattisgarh_Kota&amp;UdaipurDivOfRajasthan&amp;JhansiDivOfUP"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MadhyaPradesh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MadhyaPradesh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#West"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Magnesia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Magnesia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MagnesiumFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MagnesiumSulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MagnesiumSulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MagnesiumFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Maharashtra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Maharashtra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#West"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Maharashtra_Tamil_NaduExceptNilgiris&amp;PalaniHills_Karnataka_AndhraPradesh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Maharashtra_Tamil_NaduExceptNilgiris&amp;PalaniHills_Karnataka_AndhraPradesh"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MahuaCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MahuaCake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NonEdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Maize -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Maize">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseCarbonate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseCarbonate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseOxide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseOxide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseSulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseSulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ManganeseFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Mari -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Mari">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumFertilizer"/>
+        <hasPercentCa rdf:datatype="&xsd;double">24.0</hasPercentCa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MetalAmmoniumPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MetalAmmoniumPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SlowlyAvailableNitrogenousFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MolybdicAcid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MolybdicAcid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MolybdenumFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MonoAmmoniumPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MonoAmmoniumPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ComplexFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MonocalciumPhosphateForm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MonocalciumPhosphateForm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MuriateOfPotash -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MuriateOfPotash">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer"/>
+        <hasMinPercentP rdf:datatype="&xsd;integer">60</hasMinPercentP>
+        <hasMaxPercentP rdf:datatype="&xsd;integer">62</hasMaxPercentP>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#N -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#N">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Nutrient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NPK -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NPK">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ComplexFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NeemCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NeemCake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NonEdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Neutral -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Neutral">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilNature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NigerCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NigerCake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitroPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitroPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrateFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#North -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#North">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Zone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Orissa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Orissa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#East"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Oxamide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Oxamide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SlowlyAvailableNitrogenousFertilizer"/>
+        <hasChemicalFormula rdf:datatype="&xsd;string">(CONH2)2</hasChemicalFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#P2O5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#P2O5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Nutrient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PelletApplication -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PelletApplication">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RowPlacement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Percentage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Percentage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Pisolithus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Pisolithus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateAbsorber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Plough-solePlacement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Plough-solePlacement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Placement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassiumNitrate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassiumNitrate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer"/>
+        <hasPercentP rdf:datatype="&xsd;integer">44</hasPercentP>
+        <hasChemicalFormula rdf:datatype="&xsd;string">KNO3</hasChemicalFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassiumSchoenite -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassiumSchoenite">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer"/>
+        <hasMinPercentP rdf:datatype="&xsd;integer">20</hasMinPercentP>
+        <hasMaxPercentP rdf:datatype="&xsd;integer">30</hasMaxPercentP>
+        <hasChemicalFormula rdf:datatype="&xsd;string">K2SO4.MgSO4</hasChemicalFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassiumSulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassiumSulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PotassicFertilizer"/>
+        <hasMinPercentP rdf:datatype="&xsd;integer">48</hasMinPercentP>
+        <hasMaxPercentP rdf:datatype="&xsd;integer">52</hasMaxPercentP>
+        <hasChemicalFormula rdf:datatype="&xsd;string">K2SO4</hasChemicalFormula>
+        <canBeMixedWith rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumSulphate"/>
+        <canBeMixedWith rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RockPhosphate"/>
+        <canBeMixedWith rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SingleSuperPhosphate"/>
+        <canBeMixedWith rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TripleSuperPhosphate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PoultryManure -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PoultryManure">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#OrganicManureOfAnimalOrigin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Punjab -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Punjab">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#North"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Punjab_Haryana_Western_UP_Rajasthan_Delhi_TaraiRegionOfUttarakhand_Una&amp;PaontaValleyOfHP_Jammu_Samba&amp;KathuaDistrictsOfJ&amp;K_Chandigarh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Punjab_Haryana_Western_UP_Rajasthan_Delhi_TaraiRegionOfUttarakhand_Una&amp;PaontaValleyOfHP_Jammu_Samba&amp;KathuaDistrictsOfJ&amp;K_Chandigarh"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rabi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rabi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Season"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RainfedTimelySown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RainfedTimelySown"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rajasthan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rajasthan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#West"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RapeseedAndMustard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RapeseedAndMustard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RapeseedCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RapeseedCake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ReadilySolubleInWater -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ReadilySolubleInWater">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Solubility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RhenaniaPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RhenaniaPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingCitricAcidSolublePhosphoricAcidOrDicalciumPhosphate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rhizobium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rhizobium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SymbioticAssociation"/>
+        <hasApplicationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SeedTreatment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+        <hasCultivationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DryOrSemiDryUplandCultivation"/>
+        <hasCultivationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WetOrLowlandCultivation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RiceDosageEvent1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RiceDosageEvent1">
+        <hasRecommendedPDose>60</hasRecommendedPDose>
+        <hasRecommendedKDose>40</hasRecommendedKDose>
+        <hasRecommendedNDose>120</hasRecommendedNDose>
+        <hasSeason rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Rabi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RockPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RockPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingInsolublePhosphoricAcidOrTricalciumPhosphate"/>
+        <hasApplicationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BroadcastingAtPlanting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIAssam1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIAssam1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForAssam"/>
+        <hasTotalNProduction rdf:datatype="&xsd;decimal">128.3</hasTotalNProduction>
+        <hasTotalNConsumption rdf:datatype="&xsd;decimal">151.595</hasTotalNConsumption>
+        <hasTotalPConsumption rdf:datatype="&xsd;decimal">49.084</hasTotalPConsumption>
+        <hasTotalPProduction rdf:datatype="&xsd;decimal">5.90</hasTotalPProduction>
+        <hasTotalKConsumption rdf:datatype="&xsd;decimal">75.527</hasTotalKConsumption>
+        <hasYear rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2011-2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIAssam2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIAssam2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForAssam"/>
+        <hasYear rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2010-2011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIBihar1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIBihar1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SWIForBihar"/>
+        <hasYear rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#2011-2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Safflower -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Safflower">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SafflowerCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SafflowerCake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NonEdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SeedTreatment -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SeedTreatment">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BiofertilizerApplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SeedlingRootDip -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SeedlingRootDip">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BiofertilizerApplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SideDressing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SideDressing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#RowPlacement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SingleSuperPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SingleSuperPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingWaterSolublePhosphoricAcidOrMonocalciumPhosphate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SodiumMolybdate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SodiumMolybdate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#MolybdenumFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SodiumNitrate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SodiumNitrate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#NitrateFertilizer"/>
+        <hasChemicalFormula rdf:datatype="&xsd;string">NANO3</hasChemicalFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SodiumPentaborate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SodiumPentaborate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BoronFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilApplication -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SoilApplication">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#BiofertilizerApplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#South -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#South">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Zone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StarterSolution -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#StarterSolution">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#LiquidFormApplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Sub-soilPlacement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Sub-soilPlacement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Placement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Sugarcane -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Sugarcane">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Sunflower -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Sunflower">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TamilNadu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TamilNadu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#South"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TheCentralZone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TheCentralZone"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TheNorth-WesternPlainsZone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TheNorth-WesternPlainsZone"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TheNorthEasternPlainsZone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TheNorthEasternPlainsZone"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TheNorthernHillZone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TheNorthernHillZone"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ThePeninsularZone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ThePeninsularZone"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Topdressing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Topdressing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Broadcast"/>
+        <isUsedForFertilizer rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumNitrate"/>
+        <isUsedForFertilizer rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmmoniumSulphateNitrate"/>
+        <isUsedForFertilizer rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#CalciumAmmoniumNitrate"/>
+        <isUsedForFertilizer rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Urea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TricalciumPhosphateForm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TricalciumPhosphateForm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TripleSuperPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#TripleSuperPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizerContainingWaterSolublePhosphoricAcidOrMonocalciumPhosphate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UndecorticatedCottonSeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UndecorticatedCottonSeed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#EdibleOilcake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Urea -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Urea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmideFertilizer"/>
+        <hasChemicalFormula rdf:datatype="&xsd;string">CO(NH2)2</hasChemicalFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UreaFormaldehydeCompounds -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UreaFormaldehydeCompounds">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#SlowlyAvailableNitrogenousFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UreaPhosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UreaPhosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmideFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UreaSulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UreaSulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#AmideFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UttarPradesh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#UttarPradesh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#North"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WaterSolublePhosphoricAcidForm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WaterSolublePhosphoricAcidForm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphateForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WellBeforeSowingTheCrop -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WellBeforeSowingTheCrop">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ApplicationTime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#West -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#West">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Zone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WestBengal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WestBengal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#State"/>
+        <belongsToZone rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#East"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WetOrLowlandCultivation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WetOrLowlandCultivation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Wheat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Wheat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Crop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WheatDosageEvent1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WheatDosageEvent1">
+        <hasRecommendedNDose>120</hasRecommendedNDose>
+        <hasRecommendedPDose>60</hasRecommendedPDose>
+        <hasRecommendedKDose>40</hasRecommendedKDose>
+        <hasCultivationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IrrigatedTimelySown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WheatDosageEvent2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WheatDosageEvent2">
+        <hasRecommendedKDose>40</hasRecommendedKDose>
+        <hasRecommendedNDose>150</hasRecommendedNDose>
+        <hasRecommendedPDose>60</hasRecommendedPDose>
+        <hasCultivationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IrrigatedTimelySown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WheatDosageEvent3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WheatDosageEvent3">
+        <hasRecommendedPDose>60</hasRecommendedPDose>
+        <hasRecommendedKDose>40</hasRecommendedKDose>
+        <hasRecommendedNDose>90</hasRecommendedNDose>
+        <hasCultivationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IrrigatedLateSown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WheatDosageEvent4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#WheatDosageEvent4">
+        <hasRecommendedKDose>40</hasRecommendedKDose>
+        <hasRecommendedNDose>120</hasRecommendedNDose>
+        <hasRecommendedPDose>60</hasRecommendedPDose>
+        <hasCultivationMethod rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#IrrigatedLateSown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4ForK -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4ForK">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4ForN -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4ForN">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4"/>
+        <hasProduction rdf:datatype="&xsd;decimal">12178.6</hasProduction>
+        <hasCapacity rdf:datatype="&xsd;decimal">12947.0</hasCapacity>
+        <forTheNutrient rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#N"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4ForP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4ForP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI4"/>
+        <hasProduction rdf:datatype="&xsd;decimal">4371.2</hasProduction>
+        <hasCapacity rdf:datatype="&xsd;decimal">6221.2</hasCapacity>
+        <forTheNutrient rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#P2O5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5ForK -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5ForK">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#forTheNutrient"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#K2O"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5ForN -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5ForN">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5"/>
+        <hasProduction rdf:datatype="&xsd;decimal">12288.1</hasProduction>
+        <hasCapacity rdf:datatype="&xsd;decimal">12947.2</hasCapacity>
+        <forTheNutrient rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#N"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5ForP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5ForP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#YWIFI5"/>
+        <hasProduction rdf:datatype="&xsd;decimal">4363.7</hasProduction>
+        <hasCapacity rdf:datatype="&xsd;decimal">6214.7</hasCapacity>
+        <forTheNutrient rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#P2O5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincOxide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincOxide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincSulphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincSulphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#ZincFertilizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#i">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#Acidic"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#isSuitableForSoilNature"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#i"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#PhosphaticFertilizer"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#i"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest rdf:resource="&rdf;nil"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#DicalciumPhosphateForm"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/deena/ontologies/2015/1/fert.owl#containsPInTheFormOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#i"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
